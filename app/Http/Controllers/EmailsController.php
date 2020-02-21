@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Emails;
 use Illuminate\Http\Request;
+use App\Events\EmailReviewEntry;
 
 class EmailsController extends Controller
 {
@@ -35,7 +36,9 @@ class EmailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $email = Emails::create(['email' => $request->email]);
+        event(new EmailReviewEntry($email));
+        return response()->json($email, 200);
     }
 
     /**
@@ -44,9 +47,10 @@ class EmailsController extends Controller
      * @param  \App\Emails  $emails
      * @return \Illuminate\Http\Response
      */
-    public function show(Emails $emails)
+    public function show($id)
     {
-        //
+        $email = Emails::find($id);
+        return response()->json($email, 200);
     }
 
     /**

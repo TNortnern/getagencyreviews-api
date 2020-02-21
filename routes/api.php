@@ -25,7 +25,12 @@ Route::group(['prefix' => 'agents'], function () {
 
 Route::group(['prefix' => 'reviews'], function () {
   Route::get('/', 'ReviewsController@index');
-  Route::get('store', 'ReviewsController@store');
+  Route::post('/', 'ReviewsController@store');
 });
 
 Route::get('/users/{id}', 'UsersController@show');
+
+Route::group(['prefix' => 'emails'], function () {
+  Route::post('/', 'EmailsController@store');
+  Route::get('/{id}', 'EmailsController@show');
+});

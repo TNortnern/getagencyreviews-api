@@ -35,11 +35,10 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request;
         $review = Reviews::create([
-            'user' => $request->user,
             'agent' => $request->agent,
             'review' => $request->review,
+            'email' => $request->email,
             'rating' => $request->rating
         ]);
         return response()->json($review, 200);

@@ -370,31 +370,31 @@
                                             <div
                                                 style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="http://localhost:3000?rating=1">
+                                                    href="http://localhost:3000/reviews?rating=1-{{ $email->id }}-{{ $agent->id }}">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px"
                                                         target="__blank">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="http://localhost:3000?rating=2"
+                                                    href="http://localhost:3000/reviews?rating=2-{{ $email->id }}-{{ $agent->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="http://localhost:3000?rating=3"
+                                                    href="http://localhost:3000/reviews?rating=3-{{ $email->id }}-{{ $agent->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="http://localhost:3000?rating=4"
+                                                    href="http://localhost:3000/reviews?rating=4-{{ $email->id }}-{{ $agent->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="http://localhost:3000?rating=5-{{ $user->id }}-{{ $agent->id }}"
+                                                    href="http://localhost:3000/reviews?rating=5-{{ $email->id }}-{{ $agent->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">

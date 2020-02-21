@@ -9,12 +9,13 @@ class CreateEmailsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return void;
      */
     public function up()
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('email');
             $table->timestamps();
         });
     }

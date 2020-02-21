@@ -10,7 +10,8 @@ class Reviews extends Model
         'user',
         'agent',
         'review',
-        'rating'
+        'rating',
+        'email'
     ];
 
     public function agents() {
