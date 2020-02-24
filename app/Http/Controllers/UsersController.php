@@ -39,6 +39,11 @@ class UsersController extends Controller
     {
         // return $request->image;
         // return $request;
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:8|confirmed',
+        ]);
         if ($request->has('image')) {
             $app = env('ASSETS_URL');
             $file = $request->file('image');
