@@ -16,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return User::paginate(22);
+        return User::paginate(60);
     }
 
     /**
@@ -40,16 +40,13 @@ class UsersController extends Controller
         // return $request->image;
         // return $request;
         if ($request->has('image')) {
-
-            $app = env('APP_URL');
+            $app = env('ASSETS_URL');
             $file = $request->file('image');
             $id = uniqid();
             $name = $id . $file->getClientOriginalName();
             $path = $file->move(public_path('/images'), $name);
-            $imagename = "$app/public/uploads/$name";
-        } else {
-            $imagename = '';
-        }
+            $imagename = "$app/$name";
+        } 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
