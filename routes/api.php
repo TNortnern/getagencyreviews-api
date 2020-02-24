@@ -13,9 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 Route::group(['prefix' => 'agents'], function () {
     Route::get('{id}', 'AgentsController@show');
@@ -28,9 +25,13 @@ Route::group(['prefix' => 'reviews'], function () {
   Route::post('/', 'ReviewsController@store');
 });
 
-Route::get('/users/{id}', 'UsersController@show');
 
 Route::group(['prefix' => 'emails'], function () {
   Route::post('/', 'EmailsController@store');
   Route::get('/{id}', 'EmailsController@show');
+});
+Route::group(['prefix' => 'users'], function () {
+  Route::get('/', 'UsersController@index');
+  Route::post('/', 'UsersController@store');
+  Route::get('/{id}', 'UsersController@show');
 });

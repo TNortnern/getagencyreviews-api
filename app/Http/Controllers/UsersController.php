@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UsersController extends Controller
 {
@@ -14,7 +16,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        return User::paginate(22);
     }
 
     /**
@@ -35,7 +37,29 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // return $request->image;
+        // return $request;
+        if ($request->has('image')) {
+
+            $app = env('APP_URL');
+            $file = $request->file('image');
+            $id = uniqid();
+            $name = $id . $file->getClientOriginalName();
+            $path = $file->move(public_path('/images'), $name);
+            $imagename = "$app/public/uploads/$name";
+        } else {
+            $imagename = '';
+        }
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'image' => $imagename,
+            'password' => Hash::make($request->password),
+            'description' => $request->description,
+            'email_description' => $request->email_description,
+            'links' => json_decode($request->links)
+        ]);
+        return response()->json($user, 200);
     }
 
     /**
@@ -46,7 +70,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        return User::find($id)->first();
+        $user = User::find($id);
+        json_encode($user->links);
+        return response()->json($user, 200);
     }
 
     /**
