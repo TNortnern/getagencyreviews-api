@@ -16,13 +16,11 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email');
-            // $table->unsignedBigInteger('user');
             $table->unsignedBigInteger('agent');
             $table->string('review');
             $table->integer('rating');
             $table->timestamps();
-            // $table->foreign('user')->references('id')->on('users');
-            $table->foreign('agent')->references('id')->on('agents');
+            $table->foreign('agent')->references('id')->on('users');
         });
     }
 

@@ -35,3 +35,7 @@ Route::group(['prefix' => 'users'], function () {
   Route::post('/', 'UsersController@store');
   Route::get('/{id}', 'UsersController@show');
 });
+Route::group(['prefix' => 'profile'], function () {
+  // post for images
+  Route::post('/{id}', 'UserProfileController@update');
+});

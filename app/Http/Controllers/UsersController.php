@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return User::paginate(60);
+        return         
+        $user = User::with('profile')->paginate(60);
     }
 
     /**
@@ -37,30 +39,27 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->image;
-        // return $request;
         $request->validate([
             'name' => 'required',
             'email' => 'required|email',
-            'password' => 'required|min:8|confirmed',
+            'password' => 'required|min:8',
+            'number' => 'required',
         ]);
-        if ($request->has('image')) {
-            $app = env('ASSETS_URL');
-            $file = $request->file('image');
-            $id = uniqid();
-            $name = $id . $file->getClientOriginalName();
-            $path = $file->move(public_path('/images'), $name);
-            $imagename = "$app/$name";
-        } 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'image' => $imagename,
             'password' => Hash::make($request->password),
-            'description' => $request->description,
-            'email_description' => $request->email_description,
-            'links' => json_decode($request->links)
+            'phone_number' => $request->number
         ]);
+        UserProfile::createProfile(
+            $user->id,
+            $request->company,
+            '',
+            '',
+            '',
+            ''
+        );
+
         return response()->json($user, 200);
     }
 
@@ -72,8 +71,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        json_encode($user->links);
+        $user = User::find($id)->with('profile')->first();
+        json_encode($user->profile->links);
         return response()->json($user, 200);
     }
 

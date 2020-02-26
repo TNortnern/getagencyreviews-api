@@ -14,8 +14,8 @@ class Reviews extends Model
         'email'
     ];
 
-    public function agents() {
-        return $this->belongsTo('App\Agents');
+    public function user() {
+        return $this->belongsTo('App\Users');
     }
 
     //
