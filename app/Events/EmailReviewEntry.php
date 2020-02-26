@@ -22,11 +22,11 @@ class EmailReviewEntry
      */
     public function __construct($email)
     {
-        $data = ['email' => $email, 'agent' => Agents::find(1)->first()];
+        $data = ['email' => $email, 'agent' => User::find(1)->first()];
 
-    \Mail::send('reviews.email', $data, function ($message) use($email) {
-        $message->subject('Leave a review about John');
-        $message->from('agencyreviews@agr.com');
+    \Mail::send('reviews.email', $data, function ($message) use($email, $agent) {
+        $message->subject('Leave a review about ' . $agent->name);
+        $message->from($agent->email);
         $message->to($email->email);
     });
 
