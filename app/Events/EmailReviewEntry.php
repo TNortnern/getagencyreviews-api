@@ -9,7 +9,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use App\Agents;
+use App\User;
 
 class EmailReviewEntry
 {
@@ -22,7 +22,8 @@ class EmailReviewEntry
      */
     public function __construct($email)
     {
-        $data = ['email' => $email, 'agent' => User::find(1)->first()];
+        $agent = User::find(1)->first();
+        $data = ['email' => $email, 'agent' => $agent];
 
     \Mail::send('reviews.email', $data, function ($message) use($email, $agent) {
         $message->subject('Leave a review about ' . $agent->name);
