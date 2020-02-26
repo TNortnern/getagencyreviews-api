@@ -70,7 +70,7 @@ class UserProfileController extends Controller
     public function update(Request $request)
     {
         // var_dump($request->links);
-        if ($request->has('image')) {
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
             $app = env('ASSETS_URL');
             $file = $request->file('image');
             $id = uniqid();
@@ -78,10 +78,11 @@ class UserProfileController extends Controller
             $path = $file->move(public_path('/images'), $name);
             $imagename = "$app/$name";
         } else {
-            $imagename = '';
+            $imagename = User::find($request->id)->with('profile')->first()->profile->image;
         }
 
-        UserProfile::updateProfile($request->id, $request->company, $request->description, $request->email_description, $request->links, $imagename);
+        $profile = UserProfile::updateProfile($request->id, $request->company, $request->description, $request->email_description, $request->links, $imagename);
+        return response()->json("Profile updated!", 200);
     }
 
     /**

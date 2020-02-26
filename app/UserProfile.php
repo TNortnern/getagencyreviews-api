@@ -26,26 +26,18 @@ class UserProfile extends Model
             'links' => json_decode($links),
             'image' => $imagename
         ]);
-        return "$user updated!";
+        return $profile;
     }
     public static function updateProfile($user, $company, $description, $email_description, $links, $image)
     {
-        echo "links $links";
+        // echo "links $links";
         $profile = UserProfile::where('user', $user)->first();
         $profile->description = $description;
         $profile->company = $company;
         $profile->email_description = $email_description;
-        $profile->links = $links;
+        $profile->links = json_decode($links);
         $profile->image = $image;
         $profile->update();
-        // ->update([
-        //     'description' => $description,
-        //     'company' => $company,
-        //     'email_description' => $email_description,
-        //     'links' => json_decode($links),
-        //     'image' => $image
-        // ]);
-
-        return $profile;
+        return response()->json("$profile Profile Updated!", 200);
     }
 }
