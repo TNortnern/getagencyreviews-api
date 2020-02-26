@@ -78,7 +78,7 @@ class UserProfileController extends Controller
             $path = $file->move(public_path('/images'), $name);
             $imagename = "$app/$name";
         } else {
-            $imagename = User::with('id',$request->id)->with('profile')->first()->profile->image;
+            $imagename = User::where('id',$request->id)->with('profile')->first()->profile->image;
         }
 
         $profile = UserProfile::updateProfile($request->id, $request->company, $request->description, $request->email_description, $request->links, $imagename);
