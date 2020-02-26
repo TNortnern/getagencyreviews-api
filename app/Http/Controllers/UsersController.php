@@ -71,7 +71,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id)->with('profile');
+        $user = User::where('id', $id)->with('profile')->first();
         json_encode($user->profile->links);
         return response()->json($user, 200);
     }
