@@ -11,13 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-       DB::table('users')->insert([
+       App\User::create([
            'name' => 'John Smith',
            'email' => 'johnsmith@gmail.com',
-           'password' => Hash::make(12345678)
+           'password' => Hash::make(12345678),
+           'phone_number' => mt_rand(10000000, 99999999)
        ]);
-       Db::table('agents')->insert([
-        'user' => 1
-       ]);
+       factory('App\UserProfile')->create();
     }
 }

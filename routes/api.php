@@ -17,15 +17,10 @@ use Illuminate\Http\Request;
 Route::group(['prefix' => 'agents'], function () {
     Route::get('{id}', 'AgentsController@show');
 });
-
-
-
 Route::group(['prefix' => 'reviews'], function () {
   Route::get('/', 'ReviewsController@index');
   Route::post('/', 'ReviewsController@store');
 });
-
-
 Route::group(['prefix' => 'emails'], function () {
   Route::post('/', 'EmailsController@store');
   Route::get('/{id}', 'EmailsController@show');
@@ -38,4 +33,10 @@ Route::group(['prefix' => 'users'], function () {
 Route::group(['prefix' => 'profile'], function () {
   // post for images
   Route::post('/update', 'UserProfileController@update');
+});
+Route::group(['prefix' => 'reviewrequest'], function () {
+  Route::get('/', 'ReviewRequestController@index');
+  Route::get('/{id}', 'ReviewRequestController@show');
+  Route::post('/', 'ReviewRequestController@store');
+  Route::put('/{id}', 'ReviewRequestController@update');
 });
