@@ -376,25 +376,25 @@
                                                         target="__blank">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=2-{{ $email->id }}-{{ $agent->id }}"
+                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=2-{{ $email->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=3-{{ $email->id }}-{{ $agent->id }}"
+                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=3-{{ $email->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=4-{{ $email->id }}-{{ $agent->id }}"
+                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=4-{{ $email->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
                                                 </a>
                                                 <a style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=5-{{ $email->id }}-{{ $agent->id }}"
+                                                    href="{{ env('CLIENT_URL') }}/reviews?rating=5-{{ $email->id }}"
                                                     target="__blank">
                                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                         style="width:50px">
@@ -473,9 +473,9 @@
                                             <div
                                                 style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
                                                 <p style="max-width: 389px; margin: 0 auto;"> Hi! you recently worked
-                                                    with John. If you could take moment to reflect on your experience,
-                                                    it would really help John continue to ensure a high quality of
-                                                    service.</p>
+                                                    with {{ explode(" ",$agent->name)[0] }}. If you could take moment to
+                                                    reflect on your experience, it would really help John continue to
+                                                    ensure a high quality of service.</p>
                                             </div>
 
                                         </td>

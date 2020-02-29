@@ -24,7 +24,7 @@ class CreateReviewRequestsTable extends Migration
             $table->dateTime('star_rating_completed')->nullable();
             $table->integer('star_rating')->nullable();
             $table->dateTime('feedback_completed')->nullable();
-            $table->integer('feedback')->nullable();
+            $table->string('feedback')->nullable();
             $table->dateTime('external_link_clicked')->nullable();
             $table->dateTime('external_review_completed')->nullable();
             $table->foreign('agent')->references('id')->on('users');
