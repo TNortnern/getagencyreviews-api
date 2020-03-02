@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\UserProfile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,22 +18,28 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return         
+        return
         $user = User::with('profile')->paginate(60);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function login(Request $request)
     {
-        //
+        $request->validate([
+          'email' => 'required|email',
+          'password' => 'required|min:8'
+        ]);
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $token = Auth::user()->createToken('authToken')->accessToken;
+            $user = User::where('id', Auth::user()->id)->with('profile')->first();
+            return response()->json(['user' => $user, 'token' => $token], 200);
+        } else {
+            return response()->json('Invalid Credentials', 401);
+        }
     }
 
+
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage, in other words, register.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -59,8 +66,10 @@ class UsersController extends Controller
             '',
             ''
         );
+        $token = $user->createToken('authToken')->accessToken;
+        $newUser = User::where('id', $user->id)->with('profile')->first();
 
-        return response()->json($user, 200);
+        return response()->json(['user' => $newUser, 'token' => $token], 200);
     }
 
     /**
@@ -76,15 +85,20 @@ class UsersController extends Controller
         return response()->json($user, 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(User $user)
+    public function logout()
     {
-        //
+        auth()->user()->tokens->each(function ($token, $key) {
+            $token->delete();
+        });
+
+        return response()->json('Logged out successfully', 200);
+    }
+
+    public function getUserByToken()
+    {
+        $id = auth()->user()->id;
+        $user =  User::where('id', $id)->with('profile')->first();
+        return response()->json($user, 200);
     }
 
     /**
@@ -95,17 +109,6 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
     {
         //
     }
