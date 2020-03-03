@@ -9,6 +9,6 @@ class ReviewRequest extends Model
     protected $guarded = [];
 
     public function agent() {
-        return $this->belongsTo('App\User', 'agent');
+        return $this->belongsTo('App\User', 'agent_id');
     }
 }

@@ -23,15 +23,16 @@ class EmailReviewEntry
      */
     public function __construct($reviewRequest)
     {
-        $email = $reviewRequest;
-        $agent = User::orderBy('id', 'DESC')->where('id', $reviewRequest->agent)->first();
-        $data = ['email' => $email, 'agent' => $agent];
-
-    \Mail::send('reviews.email', $data, function ($message) use($email, $agent) {
-        $message->subject('Leave a review about ' . $agent->name);
-        $message->from($agent->email);
-        $message->to($email->client_email);
-    });
+        
+        $email = view('reviews.email')->with(['agent' => $reviewRequest->agent, 'email' => $reviewRequest]);
+        $client = new \GuzzleHttp\Client();
+        $body = ['From' => 'eric@getagentreviews.com', 'To' => $reviewRequest->client_email, 'Subject' => "$reviewRequest->client_name, rate your experience.", 'HtmlBody' => "'$email'"];
+        $response = $client->request('POST', 'https://api.postmarkapp.com/email', [
+            'json' => $body,
+            'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'X-Postmark-Server-Token' => env('POSTMARK_TOKEN')]
+        ]);
+  
+        return response()->json('Email Sent Successfully!', 200);
 
     }
 }

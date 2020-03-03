@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\ReviewRequest;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use App\Events\EmailReviewEntry;
 
@@ -28,7 +30,7 @@ class ReviewRequestController extends Controller
     public function store(Request $request)
     {
         $reviewRequest = ReviewRequest::create([
-            'agent' => $request->agent,
+            'agent_id' => $request->agent,
             'client_email' => $request->client_email,
             'client_name' => $request->client_name,
             'email_sent' => date("Y-m-d H:i:s"),
