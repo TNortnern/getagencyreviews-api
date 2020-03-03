@@ -29,8 +29,10 @@ class EmailReviewEntry
         $body = ['From' => 'eric@getagentreviews.com', 'To' => $reviewRequest->client_email, 'Subject' => "$reviewRequest->client_name, rate your experience.", 'HtmlBody' => "'$email'"];
         $response = $client->request('POST', 'https://api.postmarkapp.com/email', [
             'json' => $body,
+            'TrackOpens' => true,
             'headers' => ['Content-Type' => 'application/json', 'Accept' => 'application/json', 'X-Postmark-Server-Token' => env('POSTMARK_TOKEN')]
         ]);
+        print_r($response);
   
         return response()->json('Email Sent Successfully!', 200);
 
