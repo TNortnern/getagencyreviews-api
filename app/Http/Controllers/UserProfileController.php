@@ -81,8 +81,9 @@ class UserProfileController extends Controller
             $imagename = User::where('id',$request->id)->with('profile')->first()->profile->image;
         }
 
-        $profile = UserProfile::updateProfile($request->id, $request->company, $request->description, $request->email_description, $request->links, $imagename);
-        return response()->json("Profile updated!", 200);
+       UserProfile::updateProfile($request->id, $request->company, $request->description, $request->email_description, $request->links, $imagename);
+       $user = User::where('id',$request->id)->with('profile')->first();
+        return response()->json([ "message" => "Profile updated!", "user" => $user], 200);
     }
 
     /**

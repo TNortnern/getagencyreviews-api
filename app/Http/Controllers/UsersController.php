@@ -36,6 +36,11 @@ class UsersController extends Controller
             return response()->json('Invalid Credentials', 401);
         }
     }
+    public function getReviews($id) 
+    {
+        $reviews = User::where('id', $id)->first()->reviewRequest;
+        return $reviews;
+    }
 
 
     /**

@@ -45,9 +45,9 @@ class User extends Authenticatable
         return $this->hasOne('App\UserProfile', 'user');
     }
     public function reviews() {
-        return $this->hasMany('App\Reviews');
+        return $this->hasMany('App\Reviews', 'agent_id');
     }
     public function reviewRequest() {
-        return $this->hasMany('App\ReviewRequest');
+        return $this->hasMany('App\ReviewRequest', 'agent_id');
     }
 }

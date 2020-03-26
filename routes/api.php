@@ -31,6 +31,7 @@ Route::group(['prefix' => 'users'], function () {
   Route::post('/', 'UsersController@store');
   Route::get('/{id}', 'UsersController@show');
   Route::post('/login', 'UsersController@login');
+  Route::get('/reviews/{id}', 'UsersController@getReviews');
   Route::middleware('auth:api')->post('/logout', 'UsersController@logout');
 });
 Route::middleware('auth:api')->get('/user', 'UsersController@getUserByToken');
