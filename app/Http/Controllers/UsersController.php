@@ -55,7 +55,7 @@ class UsersController extends Controller
             'name' => 'required',
             'email' => 'required|email',
             'password' => 'required|min:8',
-            'number' => 'required',
+            'number' => 'required|phone',
         ]);
         $user = User::create([
             'name' => $request->name,

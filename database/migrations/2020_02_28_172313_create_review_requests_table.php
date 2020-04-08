@@ -16,8 +16,7 @@ class CreateReviewRequestsTable extends Migration
         Schema::create('review_requests', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('agent_id');
-            $table->string('client_email');
-            $table->string('client_name');
+            $table->unsignedBigInteger('client_id');
             $table->dateTime('email_sent')->nullable();
             $table->dateTime('email_opened')->nullable();
             $table->dateTime('link_clicked')->nullable();
@@ -28,6 +27,7 @@ class CreateReviewRequestsTable extends Migration
             $table->dateTime('external_link_clicked')->nullable();
             $table->dateTime('external_review_completed')->nullable();
             $table->foreign('agent_id')->references('id')->on('users');
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
         });
     }

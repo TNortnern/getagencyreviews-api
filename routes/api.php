@@ -45,3 +45,8 @@ Route::group(['prefix' => 'reviewrequest'], function () {
   Route::post('/', 'ReviewRequestController@store');
   Route::put('/{id}', 'ReviewRequestController@update');
 });
+Route::group(['prefix' => 'clients'], function () {
+  Route::get('/', 'ClientController@index');
+  Route::post('/', 'ClientController@store');
+  Route::patch('/{id}', 'ClientController@update');
+});

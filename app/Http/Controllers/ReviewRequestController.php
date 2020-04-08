@@ -17,7 +17,7 @@ class ReviewRequestController extends Controller
      */
     public function index()
     {
-        return ReviewRequest::with('agent')->paginate(20);
+        return ReviewRequest::with('agent')->with('client')->paginate(20);
     }
 
 
@@ -31,12 +31,11 @@ class ReviewRequestController extends Controller
     {
         $reviewRequest = ReviewRequest::create([
             'agent_id' => $request->agent,
-            'client_email' => $request->client_email,
-            'client_name' => $request->client_name,
+            'client_id' => $request->client,
             'email_sent' => date("Y-m-d H:i:s"),
         ]);
         event(new EmailReviewEntry($reviewRequest));
-        return $reviewRequest;
+        return response()->json($reviewRequest, 200);
     }
 
     /**

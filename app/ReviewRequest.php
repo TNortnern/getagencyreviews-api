@@ -11,4 +11,7 @@ class ReviewRequest extends Model
     public function agent() {
         return $this->belongsTo('App\User', 'agent_id');
     }
+    public function client() {
+        return $this->belongsTo('App\Client', 'client_id');
+    }
 }

@@ -9,7 +9,7 @@ use Faker\Generator as Faker;
 $factory->define(UserProfile::class, function (Faker $faker) {
     return [
         'user' => User::orderBy('id', 'DESC')->first(),
-        'image' => $faker->imageUrl(800, 600, 'cats'),
+        'image' => 'https://placekitten.com/200/300',
         'description' => $faker->text($maxNbChars = 200),
         'company' => $faker->word
     ];

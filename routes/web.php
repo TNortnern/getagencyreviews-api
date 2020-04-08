@@ -16,3 +16,11 @@ Route::get('/', function () {
 
     return view('welcome');
 });
+
+Route::get('/email', function () {
+return view('reviews.email')->with([
+ 'agent' => App\User::where('id', 1)->with('profile')->first(),
+ 'client' => App\Client::where('id', 1)->first(),
+ 'email' => App\ReviewRequest::where('id', 1)->first()
+]);
+});

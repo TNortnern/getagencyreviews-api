@@ -21,6 +21,8 @@ class CreateUserProfilesTable extends Migration
             $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->string('company')->nullable();
+            $table->string('title')->nullable();
+            $table->string('location')->nullable();
             $table->timestamps();
             $table->foreign('user')->references('id')->on('users');
         });
