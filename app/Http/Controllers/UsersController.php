@@ -53,7 +53,7 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique',
             'password' => 'required|min:8',
             'number' => 'required|phone',
         ]);
