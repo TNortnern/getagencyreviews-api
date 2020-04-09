@@ -51,4 +51,5 @@ Route::group(['prefix' => 'clients'], function () {
   Route::get('/', 'ClientController@index');
   Route::post('/', 'ClientController@store');
   Route::patch('/{id}', 'ClientController@update');
+  Route::delete('/{id}', 'ClientController@destroy');
 });

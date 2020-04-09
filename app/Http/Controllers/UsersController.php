@@ -45,7 +45,7 @@ class UsersController extends Controller
 
      public function getClients($id) 
     {
-        $clients = User::find($id)->clients;
+        $clients = User::clients($id);
         return response()->json($clients);
     }
 

@@ -38,36 +38,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'links' => 'array'
     ];
-    public function agents() {
-        return $this->hasOne('App\Agents');
-    }
     public function profile() {
         return $this->hasOne('App\UserProfile', 'user');
     }
-    // public function reviews() {
-    //     return $this->hasMany('App\Reviews', 'agent_id');
-    // }
     public function reviewRequest() {
         return $this->hasMany('App\ReviewRequest', 'agent_id');
     }
-    public function clients()
+    public static function clients($id)
     {
-        return $this->hasManyThrough('App\Client', 'App\ReviewRequest', 'agent_id', 'id')->select([
-            'clients.name',
-            'clients.email',
-            'clients.phone_number',
-            'review_requests.id as review_id',
-            'email_sent',
-            'email_opened',
-            'link_clicked',
-            'star_rating_completed',
-            'star_rating',
-            'feedback_completed',
-            'feedback',
-            'external_link_clicked',
-            'external_review_completed',
-            'review_requests.created_at as reviews_created_at',
-            'review_requests.updated_at as reviews_updated_at',
-        ]);
+        if ($id) {
+            return ReviewRequest::where('agent_id', $id)->with('client')->get();
+        }
     }
 }

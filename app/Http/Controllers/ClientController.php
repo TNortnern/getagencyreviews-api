@@ -17,7 +17,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return Clients::paginate(10);
+        return Client::paginate(10);
     }
 
     /**
@@ -30,32 +30,23 @@ class ClientController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => ['email', new UniqueClient($request->email)],
+            'email' => ['email', new UniqueClient($request->email, $request->agent)],
             'phone_number' => 'phone'
         ]);
-        $clients = User::find($request->agent)->clients;
-        $exists = false;
-        foreach ($clients as $client) {
-            if ($client->email === $request->email) {
-                $exists = true;
-                break;
-            }
-        }
-        if ($exists) {
-            return response()->json(['data' => "errors"], 200);
-        }
-        return response()->json($exists, 200);
-        $newClient = Client::firstOrCreate([
+       
+        $newClient = Client::create([
             'email' => $request->email,
             'name' => $request->name,
             'phone_number' => $request->phone_number
         ]);
-        $reviewRequest = ReviewRequest::firstOrCreate([
+        $reviewRequest = ReviewRequest::create([
             'agent_id' => $request->agent,
             'client_id' => $newClient->id,
         ]);
+        $reviewItem = ReviewRequest::find($reviewRequest->id);
+        $reviewItem->client = $newClient;
 
-        return $newClient;
+        return $reviewItem;
     }
 
     /**
@@ -88,8 +79,14 @@ class ClientController extends Controller
      * @param  \App\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Client $client)
+    public function destroy($id)
     {
-        //
+        $client = Client::where('id', $id);
+        $delete = $client->update([
+            'isDeleted' => 1
+        ]);
+        if ($delete) {
+            return response()->json(['client' => $client->first(), 'msg' => 'deleted!'], 200);
+        }
     }
 }

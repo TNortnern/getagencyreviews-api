@@ -9,6 +9,6 @@ class Client extends Model
     protected $guarded = [];
     
      public function reviews() {
-        return $this->hasMany('App\ReviewRequest', 'client_id');
+        return $this->hasOne('App\ReviewRequest', 'client_id');
     }
 }
