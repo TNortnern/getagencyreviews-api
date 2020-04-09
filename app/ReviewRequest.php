@@ -14,4 +14,7 @@ class ReviewRequest extends Model
     public function client() {
         return $this->belongsTo('App\Client', 'client_id');
     }
+    public function clients () {
+        return $this->hasMany('App\Client', 'id');
+    }
 }

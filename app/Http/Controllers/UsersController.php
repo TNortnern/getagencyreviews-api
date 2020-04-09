@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\UserProfile;
+use App\ReviewRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -38,10 +39,15 @@ class UsersController extends Controller
     }
     public function getReviews($id) 
     {
-        $reviews = User::where('id', $id)->first()->reviewRequest;
-        return $reviews;
+        $reviews = ReviewRequest::where('agent_id', $id)->with('agent')->with('client')->paginate(20);
+        return response()->json($reviews);
     }
 
+     public function getClients($id) 
+    {
+        $clients = User::find($id)->clients;
+        return response()->json($clients);
+    }
 
     /**
      * Store a newly created resource in storage, in other words, register.

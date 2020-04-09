@@ -59,9 +59,15 @@ class ReviewRequestController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($request->has('email_sent')) {
+            ReviewRequest::where('id', $id)->update(['email_sent' => date('Y-m-d H:i:s')]);
+            $review = ReviewRequest::where('id', $id)->with('agent')->with('client')->first();
+            event(new EmailReviewEntry($review));
+            return $review;
+        }
         if ($request->has('link_clicked')) {
             ReviewRequest::where('id', $id)->update(['link_clicked' => date('Y-m-d H:i:s')]);
-            $review = ReviewRequest::where('id', $id)->with('agent')->first();
+            $review = ReviewRequest::where('id', $id)->with('agent')->with('client')->first();
             return $review;
         }
         if ($request->has('star_rating_completed')) {
@@ -69,7 +75,7 @@ class ReviewRequestController extends Controller
                 'star_rating_completed' => date('Y-m-d H:i:s'),
                 'star_rating' => $request->star_rating
             ]);
-            $review = ReviewRequest::where('id', $id)->with('agent')->first();
+            $review = ReviewRequest::where('id', $id)->with('agent')->with('client')->first();
             return $review;
         }
         if ($request->has('feedback_completed')) {
@@ -77,7 +83,7 @@ class ReviewRequestController extends Controller
                 'feedback_completed' => date('Y-m-d H:i:s'),
                 'feedback' => $request->feedback
             ]);
-            $review = ReviewRequest::where('id', $id)->with('agent')->first();
+            $review = ReviewRequest::where('id', $id)->with('agent')->with('client')->first();
             return $review;
         }
         if ($request->has('external_review_completed')) {
@@ -85,7 +91,7 @@ class ReviewRequestController extends Controller
                 'external_review_completed' => date('Y-m-d H:i:s'),
                 'external_link_clicked' => date('Y-m-d H:i:s')
             ]);
-            $review = ReviewRequest::where('id', $id)->with('agent')->first();
+            $review = ReviewRequest::where('id', $id)->with('agent')->with('client')->first();
             return $review;
         }
     }

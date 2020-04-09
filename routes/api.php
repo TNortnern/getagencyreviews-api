@@ -32,6 +32,7 @@ Route::group(['prefix' => 'users'], function () {
   Route::get('/{id}', 'UsersController@show');
   Route::post('/login', 'UsersController@login');
   Route::get('/reviews/{id}', 'UsersController@getReviews');
+  Route::get('/{id}/clients',  'UsersController@getClients');
   Route::middleware('auth:api')->post('/logout', 'UsersController@logout');
 });
 Route::middleware('auth:api')->get('/user', 'UsersController@getUserByToken');
@@ -44,6 +45,7 @@ Route::group(['prefix' => 'reviewrequest'], function () {
   Route::get('/{id}', 'ReviewRequestController@show');
   Route::post('/', 'ReviewRequestController@store');
   Route::put('/{id}', 'ReviewRequestController@update');
+  Route::get('/agent/{id}', 'ReviewRequestController@getReviewsByAgent');
 });
 Route::group(['prefix' => 'clients'], function () {
   Route::get('/', 'ClientController@index');

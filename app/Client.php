@@ -8,7 +8,7 @@ class Client extends Model
 {
     protected $guarded = [];
     
-     public function reviewRequest() {
+     public function reviews() {
         return $this->hasMany('App\ReviewRequest', 'client_id');
     }
 }

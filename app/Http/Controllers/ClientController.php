@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Client;
+use App\ReviewRequest;
+use App\Rules\UniqueClient;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -27,14 +30,31 @@ class ClientController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'email',
+            'email' => ['email', new UniqueClient($request->email)],
             'phone_number' => 'phone'
         ]);
+        $clients = User::find($request->agent)->clients;
+        $exists = false;
+        foreach ($clients as $client) {
+            if ($client->email === $request->email) {
+                $exists = true;
+                break;
+            }
+        }
+        if ($exists) {
+            return response()->json(['data' => "errors"], 200);
+        }
+        return response()->json($exists, 200);
         $newClient = Client::firstOrCreate([
             'email' => $request->email,
             'name' => $request->name,
             'phone_number' => $request->phone_number
         ]);
+        $reviewRequest = ReviewRequest::firstOrCreate([
+            'agent_id' => $request->agent,
+            'client_id' => $newClient->id,
+        ]);
+
         return $newClient;
     }
 
@@ -60,7 +80,6 @@ class ClientController extends Controller
     {
         $updatedClient = Client::where('id', $id)->update($request->all());
         return response()->json(['msg' => 'Success', 'id' => $updatedClient]);
-
     }
 
     /**

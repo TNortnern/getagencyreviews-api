@@ -27,7 +27,7 @@ class EmailReviewEntry
         $agent = User::where('id', $reviewRequest->agent->id)->with('profile')->first();
         $email = view('reviews.email')->with(['agent' => $agent, 'email' => $reviewRequest, 'client' => $client]);
         $client = new \GuzzleHttp\Client();
-        $body = ['From' => 'eric@getagentreviews.com', 'To' => $reviewRequest->client->email, 'Subject' => $reviewRequest->client->name. ", rate your experience.", 'HtmlBody' => "'$email'"];
+        $body = ['From' => 'eric@getagentreviews.com', 'To' => $reviewRequest->client->email, 'Subject' => 'Agent Reviews', 'HtmlBody' => "'$email'"];
         $response = $client->request('POST', 'https://api.postmarkapp.com/email', [
             'json' => $body,
             'TrackOpens' => true,
