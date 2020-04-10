@@ -47,7 +47,21 @@ class User extends Authenticatable
     public static function clients($id)
     {
         if ($id) {
-            return ReviewRequest::where('agent_id', $id)->with('client')->get();
+            return ReviewRequest::where('agent_id', $id)->whereHas('client', function($q) {
+                $q->where(['isDeleted' => 0]);
+            })->with('client')->get();
         }
+    }
+    public static function isUnique($email, $agent) {
+        $clients = User::clients($agent);
+        $unique = true;
+        foreach ($clients as $reviewItem) {
+            if ($reviewItem->client->email === $email) {
+                $unique = false;
+                break;
+            }
+        }
+        return $unique;
+
     }
 }

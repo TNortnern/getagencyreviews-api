@@ -50,6 +50,7 @@ Route::group(['prefix' => 'reviewrequest'], function () {
 Route::group(['prefix' => 'clients'], function () {
   Route::get('/', 'ClientController@index');
   Route::post('/', 'ClientController@store');
+  Route::post('/bulk', 'ClientController@bulkStore');
   Route::patch('/{id}', 'ClientController@update');
   Route::delete('/{id}', 'ClientController@destroy');
 });

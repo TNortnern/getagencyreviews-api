@@ -7,6 +7,7 @@ use App\Client;
 use App\ReviewRequest;
 use App\Rules\UniqueClient;
 use Illuminate\Http\Request;
+use Validator;
 
 class ClientController extends Controller
 {
@@ -47,6 +48,40 @@ class ClientController extends Controller
         $reviewItem->client = $newClient;
 
         return $reviewItem;
+    }
+    public function bulkStore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+    'clients.*.email' => 'email',
+    'clients.*.name' => 'required',
+    'clients.*.phone_number' => 'required|phone',
+    ]);
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
+
+        $arrayOfFailed = [];
+        $arrayOfSuccess = [];
+        foreach ($request->clients as $client) {
+            $isUnique = User::isUnique($client['email'], $request->agent);
+            if (!$isUnique) {
+                array_push($arrayOfFailed, $client);
+            } else {
+                $newClient = Client::create([
+                'email' => $client['email'],
+                'name' => $client['name'],
+                'phone_number' => $client['phone_number']
+            ]);
+                $reviewRequest = ReviewRequest::create([
+                'agent_id' => $request->agent,
+                'client_id' => $newClient->id,
+            ]);
+                $reviewItem = ReviewRequest::find($reviewRequest->id);
+                $reviewItem->client = $newClient;
+                array_push($arrayOfSuccess, $reviewItem);
+            }
+        }
+        return response()->json(['failed' => $arrayOfFailed, 'success' => $arrayOfSuccess], 200);
     }
 
     /**
