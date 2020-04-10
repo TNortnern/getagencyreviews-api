@@ -102,6 +102,10 @@
                 overflow: hidden !important
             }
         }
+
+        .star-margins {
+            margin: 0 9px;
+        }
     </style>
 </head>
 
@@ -245,31 +249,32 @@
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div
                                                 style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
-                                                <a style="color: #464646; text-decoration: none;"
+                                                <a class="star-margins"
+                                                    style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:50px"
-                                                        target="__blank"> </a><a
+                                                        style="width:40px"
+                                                        target="__blank"> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:50px"> </a><a
+                                                        style="width:40px"> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:50px"> </a><a
+                                                        style="width:40px"> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:50px"> </a><a
+                                                        style="width:40px"> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:50px"></a></div>
+                                                        style="width:40px"></a></div>
                                         </td>
                                     </tr>
                                 </table>
