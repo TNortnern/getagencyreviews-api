@@ -114,7 +114,6 @@
         .star-text {
             color: #a6a6a6;
             padding-top: 7px;
-            width: 30px
         }
 
         .mw-250 {
@@ -308,17 +307,7 @@
                                                             href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
                                                             target="__blank"><img
                                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="star-text"
-                                                        style="padding-left: 10px">Awful</td>
-                                                    <td class="star-text">Not Great</td>
-                                                    <td style="padding-left: 14px"
-                                                        class="star-text">Okay</td>
-                                                    <td style="padding-right: 0px"
-                                                        class="star-text">Pretty Good</td>
-                                                    <td class="star-text">Fantastic!</td>
+                                                                style="max-width:40px"></a></td>
                                                 </tr>
                                             </table>
                                         </td>
