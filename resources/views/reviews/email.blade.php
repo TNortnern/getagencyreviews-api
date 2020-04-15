@@ -63,8 +63,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
         rel="stylesheet"
         type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700"
+        rel="stylesheet"
+        type="text/css">
     <style type="text/css">
         @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700);
+        @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
     </style>
     <!--<![endif]-->
     <style type="text/css">
@@ -105,6 +109,15 @@
 
         .star-margins {
             margin: 0 9px;
+        }
+
+        .star-text {
+            color: #a6a6a6;
+            padding-top: 7px;
+        }
+
+        .mw-250 {
+            max-width: 100%;
         }
     </style>
 </head>
@@ -257,35 +270,55 @@
                                     width="100%">
                                     <tr>
                                         <td align="center"
+                                            class="mw-250"
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
-                                            <div
-                                                style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
-                                                <a class="star-margins"
-                                                    style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"><img
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"
-                                                        target="__blank"> </a><a class="star-margins"
-                                                    style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
-                                                    target="__blank"><img
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> </a><a class="star-margins"
-                                                    style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
-                                                    target="__blank"><img
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> </a><a class="star-margins"
-                                                    style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
-                                                    target="__blank"><img
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> </a><a class="star-margins"
-                                                    style="color: #464646; text-decoration: none;"
-                                                    href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
-                                                    target="__blank"><img
-                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"></a></div>
+                                            <table cellpadding="0"
+                                                cellspacing="0"
+                                                width="400"
+                                                border="0"
+                                                style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:400px;border:none;">
+                                                <tr>
+                                                    <td><a class="star-margins"
+                                                            style="color: #464646; text-decoration: none;"
+                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                style="width:40px"
+                                                                target="__blank"></a></td>
+                                                    <td><a class="star-margins"
+                                                            style="color: #464646; text-decoration: none;"
+                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
+                                                            target="__blank"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                style="width:40px"></a></td>
+                                                    <td><a class="star-margins"
+                                                            style="color: #464646; text-decoration: none;"
+                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
+                                                            target="__blank"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                style="width:40px"></a></td>
+                                                    <td><a class="star-margins"
+                                                            style="color: #464646; text-decoration: none;"
+                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
+                                                            target="__blank"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                style="width:40px"></a></td>
+                                                    <td><a class="star-margins"
+                                                            style="color: #464646; text-decoration: none;"
+                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
+                                                            target="__blank"><img
+                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                style="width:40px"></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="star-text"
+                                                        style="padding-left: 10px">Awful</td>
+                                                    <td class="star-text">Not Great</td>
+                                                    <td style="padding-left: 14px"
+                                                        class="star-text">Okay</td>
+                                                    <td class="star-text">Pretty Good</td>
+                                                    <td class="star-text">Fantastic!</td>
+                                                </tr>
+                                            </table>
                                         </td>
                                     </tr>
                                 </table>
