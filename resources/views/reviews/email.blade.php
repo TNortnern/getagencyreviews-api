@@ -311,9 +311,9 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="star-text"
-                                                        style="padding-left: 10px">Awful</td>
+                                                        style="padding-left: 0px">Awful</td>
                                                     <td class="star-text">Not Great</td>
-                                                    <td style="padding-left: 14px"
+                                                    <td style="padding-left: 0px"
                                                         class="star-text">Okay</td>
                                                     <td class="star-text">Pretty Good</td>
                                                     <td class="star-text">Fantastic!</td>
