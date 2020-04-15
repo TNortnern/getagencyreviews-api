@@ -307,7 +307,7 @@
                                                             href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
                                                             target="__blank"><img
                                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="max-width:40px"></a></td>
+                                                                style="width:40px"></a></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="position: relative;"
@@ -316,11 +316,11 @@
                                                     </td>
                                                     <td style="position: relative;"
                                                         class="star-text"><span
-                                                            style="position: absolute; top: 17%; transform: translateX(-10px)">Not
+                                                            style="position: absolute; top: 17%; transform: translateX(-2px)">Not
                                                             Great</span></td>
                                                     <td style="position: relative;"
                                                         class="star-text"><span
-                                                            style="position: absolute; top: 17%; transform: translateX(6px)">Okay</span>
+                                                            style="position: absolute; top: 17%; transform: translateX(13px)">Okay</span>
                                                     </td>
                                                     <td style="position: relative;"
                                                         class="star-text"><span
