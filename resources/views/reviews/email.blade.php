@@ -114,6 +114,7 @@
         .star-text {
             color: #a6a6a6;
             padding-top: 7px;
+            width: 30px
         }
 
         .mw-250 {
@@ -311,11 +312,12 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="star-text"
-                                                        style="padding-left: 0px">Awful</td>
+                                                        style="padding-left: 10px">Awful</td>
                                                     <td class="star-text">Not Great</td>
-                                                    <td style="padding-left: 0px"
+                                                    <td style="padding-left: 14px"
                                                         class="star-text">Okay</td>
-                                                    <td class="star-text">Pretty Good</td>
+                                                    <td style="padding-right: 0px"
+                                                        class="star-text">Pretty Good</td>
                                                     <td class="star-text">Fantastic!</td>
                                                 </tr>
                                             </table>
