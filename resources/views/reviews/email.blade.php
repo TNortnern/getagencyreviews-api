@@ -106,10 +106,21 @@
         .star-margins {
             margin: 0 12px;
             display: inline-block;
+
         }
 
         .star-text {
             color: #a6a6a6
+        }
+
+        @media only screen and (max-width: 600px) {
+            .star-margins {
+                margin: 0 5px
+            }
+
+            span {
+                font-size: 9px
+            }
         }
     </style>
 </head>
@@ -269,34 +280,34 @@
                                                     style="color: #464646; text-decoration: none; display: inline-block;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"
+                                                        style="width:35px"
                                                         target="__blank"> <span class="star-text"
                                                         style="display: block;">Awful</span> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> <span class="star-text"
+                                                        style="width:35px"> <span class="star-text"
                                                         style="display: block;">Not Great</span> </a><a
                                                     class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> <span class="star-text"
+                                                        style="width:35px"> <span class="star-text"
                                                         style="display: block;">Okay</span> </a><a class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> <span class="star-text"
+                                                        style="width:35px"> <span class="star-text"
                                                         style="display: block;">Pretty Good</span> </a><a
                                                     class="star-margins"
                                                     style="color: #464646; text-decoration: none;"
                                                     href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
                                                     target="__blank"><img
                                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                        style="width:40px"> <span class="star-text"
+                                                        style="width:35px"> <span class="star-text"
                                                         style="display: block;">Fantastic!</span></a></div>
                                         </td>
                                     </tr>
