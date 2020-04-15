@@ -309,6 +309,28 @@
                                                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
                                                                 style="max-width:40px"></a></td>
                                                 </tr>
+                                                <tr>
+                                                    <td style="position: relative;"
+                                                        class="star-text"><span
+                                                            style="position: absolute; top: 17%; transform: translateX(2px)">Awful</span>
+                                                    </td>
+                                                    <td style="position: relative;"
+                                                        class="star-text"><span
+                                                            style="position: absolute; top: 17%; transform: translateX(-10px)">Not
+                                                            Great</span></td>
+                                                    <td style="position: relative;"
+                                                        class="star-text"><span
+                                                            style="position: absolute; top: 17%; transform: translateX(6px)">Okay</span>
+                                                    </td>
+                                                    <td style="position: relative;"
+                                                        class="star-text"><span
+                                                            style="position: absolute; top: 17%; transform: translateX(-10px)">Pretty
+                                                            Good</span></td>
+                                                    <td style="position: relative;"
+                                                        class="star-text"><span
+                                                            style="position: absolute; top: 17%; transform: translateX(-6px)">Fantastic!</span>
+                                                    </td>
+                                                </tr>
                                             </table>
                                         </td>
                                     </tr>
