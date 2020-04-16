@@ -313,7 +313,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding-top:3px;text-align:center;color:#a6a6a6;">
                                                                                 Awful</div>
                                                                         </td>
                                                                     </tr>
@@ -359,7 +359,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px; padding-top:3px;text-align:center;color:#a6a6a6;">
                                                                                 Not Great</div>
                                                                         </td>
                                                                     </tr>
@@ -405,7 +405,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding-top:3px;text-align:center;color:#a6a6a6;">
                                                                                 Okay</div>
                                                                         </td>
                                                                     </tr>
@@ -451,7 +451,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding-top:3px;text-align:center;color:#a6a6a6;">
                                                                                 Pretty Good</div>
                                                                         </td>
                                                                     </tr>
@@ -497,8 +497,8 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
-                                                                                Fantastic!</div>
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:14px;padding-top:3px;text-align:center;color:#a6a6a6;">
+                                                                                Fantastic</div>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -543,9 +543,9 @@
                                             <div
                                                 style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
                                                 <p style="max-width: 87%; margin: 0 auto;">Hi {{ $client->name }}, you
-                                                    recently worked with {{ explode(" ",$agent->name)[0] }}. If you
-                                                    could take a moment to reflect on your experience, it would really
-                                                    help John continue to ensure a high quality of service.</p>
+                                                    recently worked with <b>{{ explode(" ",$agent->name)[0] }}</b>. If
+                                                    you could take a moment to reflect on your experience, it would
+                                                    really help John continue to ensure a high quality of service.</p>
                                             </div>
                                         </td>
                                     </tr>
