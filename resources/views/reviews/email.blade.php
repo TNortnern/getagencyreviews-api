@@ -545,7 +545,8 @@
                                                 <p style="max-width: 87%; margin: 0 auto;">Hi {{ $client->name }}, you
                                                     recently worked with <b>{{ explode(" ",$agent->name)[0] }}</b>. If
                                                     you could take a moment to reflect on your experience, it would
-                                                    really help John continue to ensure a high quality of service.</p>
+                                                    really help {{ explode(" ",$agent->name)[0] }} continue to ensure a
+                                                    high quality of service.</p>
                                             </div>
                                         </td>
                                     </tr>
