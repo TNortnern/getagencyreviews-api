@@ -295,7 +295,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:40px;"><a
+                                                                                        <td style="width:45px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"
@@ -341,7 +341,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:40px;"><a
+                                                                                        <td style="width:45px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
@@ -387,7 +387,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:40px;"><a
+                                                                                        <td style="width:45px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
@@ -433,7 +433,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:40px;"><a
+                                                                                        <td style="width:45px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
@@ -479,7 +479,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:40px;"><a
+                                                                                        <td style="width:45px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
@@ -542,7 +542,7 @@
                                             style="font-size:0px;padding:10px 25px;word-break:break-word;">
                                             <div
                                                 style="font-family:Roboto, sans-serif;font-size:16px;line-height:33px;text-align:center;color:black;">
-                                                <p style="max-width: 389px; margin: 0 auto;">Hi {{ $client->name }}, you
+                                                <p style="max-width: 87%; margin: 0 auto;">Hi {{ $client->name }}, you
                                                     recently worked with {{ explode(" ",$agent->name)[0] }}. If you
                                                     could take a moment to reflect on your experience, it would really
                                                     help John continue to ensure a high quality of service.</p>
