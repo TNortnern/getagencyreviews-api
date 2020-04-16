@@ -131,7 +131,7 @@
             }
 
             span {
-                font-size: 9px display: inline;
+                font-size: 9px
             }
         }
     </style>
