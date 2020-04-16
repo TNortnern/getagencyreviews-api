@@ -113,14 +113,6 @@
 
         .star-text {
             color: #a6a6a6;
-            font-size: 13px
-        }
-
-        @media only screen and (max-width: 600px) {
-            .star-text {
-                color: #a6a6a6;
-                font-size: 10px;
-            }
         }
     </style>
 </head>
@@ -277,9 +269,9 @@
                                             style="font-size:0px;padding:0;word-break:break-word;">
                                             <table cellpadding="0"
                                                 cellspacing="0"
-                                                width="70%"
+                                                width="85%"
                                                 border="0"
-                                                style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:70%;border:none;">
+                                                style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:85%;border:none;">
                                                 <tbody>
                                                     <tr>
                                                         <td width="57"
@@ -303,7 +295,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:35px;"><a
+                                                                                        <td style="width:40px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"
@@ -321,7 +313,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
                                                                                 Awful</div>
                                                                         </td>
                                                                     </tr>
@@ -349,14 +341,14 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:35px;"><a
+                                                                                        <td style="width:40px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
                                                                                                 target="_blank"><img
                                                                                                     height="auto"
                                                                                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:12px;"
                                                                                                     width="40"></a></td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -367,7 +359,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
                                                                                 Not Great</div>
                                                                         </td>
                                                                     </tr>
@@ -395,14 +387,14 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:35px;"><a
+                                                                                        <td style="width:40px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
                                                                                                 target="_blank"><img
                                                                                                     height="auto"
                                                                                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:12px;"
                                                                                                     width="40"></a></td>
                                                                                     </tr>
                                                                                 </tbody>
@@ -413,7 +405,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
                                                                                 Okay</div>
                                                                         </td>
                                                                     </tr>
@@ -441,7 +433,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:35px;"><a
+                                                                                        <td style="width:40px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
@@ -459,7 +451,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
                                                                                 Pretty Good</div>
                                                                         </td>
                                                                     </tr>
@@ -487,7 +479,7 @@
                                                                                 style="border-collapse:collapse;border-spacing:0px;">
                                                                                 <tbody>
                                                                                     <tr>
-                                                                                        <td style="width:35px;"><a
+                                                                                        <td style="width:40px;"><a
                                                                                                 class="star-margins"
                                                                                                 style="color: #464646; text-decoration: none;"
                                                                                                 href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
@@ -505,7 +497,7 @@
                                                                         <td align="center"
                                                                             style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
                                                                             <div class="star-text"
-                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:12px;line-height:15px;text-align:center;color:#a6a6a6;">
                                                                                 Fantastic!</div>
                                                                         </td>
                                                                     </tr>
