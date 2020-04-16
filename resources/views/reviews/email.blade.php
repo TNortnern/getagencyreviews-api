@@ -265,58 +265,247 @@
                                     width="100%">
                                     <tr>
                                         <td align="center"
-                                            style="font-size:0px;padding:10px 25px;word-break:break-word;">
+                                            class="mw-250"
+                                            style="font-size:0px;padding:0;word-break:break-word;">
                                             <table cellpadding="0"
                                                 cellspacing="0"
-                                                width="70%"
+                                                width="95%"
                                                 border="0"
-                                                style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:70%;border:none;">
-                                                <tr>
-                                                    <td><a class="star-margins"
-                                                            style="color: #464646; text-decoration: none;"
-                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"
-                                                                target="__blank"></a></td>
-                                                    <td><a class="star-margins"
-                                                            style="color: #464646; text-decoration: none;"
-                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
-                                                            target="__blank"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"></a></td>
-                                                    <td><a class="star-margins"
-                                                            style="color: #464646; text-decoration: none;"
-                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
-                                                            target="__blank"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"></a></td>
-                                                    <td><a class="star-margins"
-                                                            style="color: #464646; text-decoration: none;"
-                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
-                                                            target="__blank"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"></a></td>
-                                                    <td><a class="star-margins"
-                                                            style="color: #464646; text-decoration: none;"
-                                                            href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
-                                                            target="__blank"><img
-                                                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
-                                                                style="width:40px"></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <p></p>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="star-text"
-                                                        style="padding-left: 10px">Awful</td>
-                                                    <td class="star-text">Not Great</td>
-                                                    <td style="padding-left: 14px"
-                                                        class="star-text">Okay</td>
-                                                    <td class="star-text">Pretty Good</td>
-                                                    <td class="star-text">Fantastic!</td>
-                                                </tr>
+                                                style="color:#000000;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:22px;table-layout:auto;width:95%;border:none;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="57"
+                                                            valign="top"
+                                                            align="left"
+                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                            <table border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                role="presentation"
+                                                                style="vertical-align:top;"
+                                                                width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                                            <table border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                                role="presentation"
+                                                                                style="border-collapse:collapse;border-spacing:0px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="width:40px;"><a
+                                                                                                class="star-margins"
+                                                                                                style="color: #464646; text-decoration: none;"
+                                                                                                href="{{ env('CLIENT_URL') }}/reviews/rating=1-{{ $email->id }}"
+                                                                                                target="_blank"><img
+                                                                                                    height="auto"
+                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    width="40"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
+                                                                            <div class="star-text"
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                Awful</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="57"
+                                                            valign="top"
+                                                            align="left"
+                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                            <table border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                role="presentation"
+                                                                style="vertical-align:top;"
+                                                                width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                                            <table border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                                role="presentation"
+                                                                                style="border-collapse:collapse;border-spacing:0px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="width:40px;"><a
+                                                                                                class="star-margins"
+                                                                                                style="color: #464646; text-decoration: none;"
+                                                                                                href="{{ env('CLIENT_URL') }}/reviews/rating=2-{{ $email->id }}"
+                                                                                                target="_blank"><img
+                                                                                                    height="auto"
+                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    width="40"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
+                                                                            <div class="star-text"
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                Not Great</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="57"
+                                                            valign="top"
+                                                            align="left"
+                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                            <table border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                role="presentation"
+                                                                style="vertical-align:top;"
+                                                                width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                                            <table border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                                role="presentation"
+                                                                                style="border-collapse:collapse;border-spacing:0px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="width:40px;"><a
+                                                                                                class="star-margins"
+                                                                                                style="color: #464646; text-decoration: none;"
+                                                                                                href="{{ env('CLIENT_URL') }}/reviews/rating=3-{{ $email->id }}"
+                                                                                                target="_blank"><img
+                                                                                                    height="auto"
+                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    width="40"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
+                                                                            <div class="star-text"
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                Okay</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="57"
+                                                            valign="top"
+                                                            align="left"
+                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                            <table border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                role="presentation"
+                                                                style="vertical-align:top;"
+                                                                width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                                            <table border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                                role="presentation"
+                                                                                style="border-collapse:collapse;border-spacing:0px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="width:40px;"><a
+                                                                                                class="star-margins"
+                                                                                                style="color: #464646; text-decoration: none;"
+                                                                                                href="{{ env('CLIENT_URL') }}/reviews/rating=4-{{ $email->id }}"
+                                                                                                target="_blank"><img
+                                                                                                    height="auto"
+                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    width="40"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
+                                                                            <div class="star-text"
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                Pretty Good</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="57"
+                                                            valign="top"
+                                                            align="left"
+                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                            <table border="0"
+                                                                cellpadding="0"
+                                                                cellspacing="0"
+                                                                role="presentation"
+                                                                style="vertical-align:top;"
+                                                                width="100%">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:0;word-break:break-word;">
+                                                                            <table border="0"
+                                                                                cellpadding="0"
+                                                                                cellspacing="0"
+                                                                                role="presentation"
+                                                                                style="border-collapse:collapse;border-spacing:0px;">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td style="width:40px;"><a
+                                                                                                class="star-margins"
+                                                                                                style="color: #464646; text-decoration: none;"
+                                                                                                href="{{ env('CLIENT_URL') }}/reviews/rating=5-{{ $email->id }}"
+                                                                                                target="_blank"><img
+                                                                                                    height="auto"
+                                                                                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/2000px-Five-pointed_star.svg.png"
+                                                                                                    style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;"
+                                                                                                    width="40"></a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="font-size:0px;padding:7px 0 0 0;word-break:break-word;">
+                                                                            <div class="star-text"
+                                                                                style="font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:13px;line-height:15px;text-align:center;color:#a6a6a6;">
+                                                                                Fantastic!</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
                                             </table>
                                         </td>
                                     </tr>
