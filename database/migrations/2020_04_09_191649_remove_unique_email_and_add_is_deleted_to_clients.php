@@ -14,8 +14,7 @@ class RemoveUniqueEmailAndAddIsDeletedToClients extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->boolean('isDeleted')->default(0);
-            $table->string('email')->change();
+            $table->string('phone_number')->nullable()->change();
         });
     }
 

@@ -54,7 +54,7 @@ class ClientController extends Controller
         $validator = Validator::make($request->all(), [
     'clients.*.email' => 'email',
     'clients.*.name' => 'required',
-    'clients.*.phone_number' => 'required|phone',
+    'clients.*.phone_number' => 'phone',
     ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
